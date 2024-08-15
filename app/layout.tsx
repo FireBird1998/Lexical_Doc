@@ -1,15 +1,15 @@
-import "@/styles/globals.css";
-import { Inter as FontSans } from "next/font/google";
+import '@/styles/globals.css'
+import { Inter as FontSans } from 'next/font/google'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
@@ -18,12 +18,12 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable
         )}
       >
         ...
       </body>
     </html>
-  );
+  )
 }
