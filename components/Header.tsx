@@ -2,7 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
 
-const Header = () => {
+interface HeaderProps {
+	children: React.ReactNode
+}
+
+const Header = ({ children }: HeaderProps) => {
 	return (
 		<div>
 			<Link href="/">
@@ -21,6 +25,7 @@ const Header = () => {
 					className="mr-2 md:hidden"
 				/>
 			</Link>
+			{children}
 		</div>
 	)
 }
