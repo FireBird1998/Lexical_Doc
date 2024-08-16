@@ -1,24 +1,22 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import * as React from 'react'
+import { cn } from '@/lib/utils'
 
-interface HeaderProps {
-	children: React.ReactNode
-}
-
-const Header = ({ children }: HeaderProps) => {
+const Header = ({ children, className }: HeaderProps) => {
 	return (
-		<div>
+		<div className={cn('header', className)}>
 			<Link href="/">
 				<Image
-					src="assets/icons/logo.svg"
+					src="/assets/icons/logo.svg"
 					alt="logo with name"
 					width={120}
 					height={32}
 					className="hidden md:block"
 				/>
 				<Image
-					src="assets/icons/logo-icon.svg"
+					src="/assets/icons/logo-icon.svg"
 					alt="logo"
 					width={32}
 					height={32}
