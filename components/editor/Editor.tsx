@@ -15,35 +15,39 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 // try to recover gracefully without losing user data.
 
 function Placeholder() {
-	return <div className="editor-placeholder">Enter some rich text...</div>
+  return (
+    <div className="editor-placeholder">Enter some rich text...</div>
+  )
 }
 
 export function Editor() {
-	const initialConfig = {
-		namespace: 'Editor',
-		nodes: [HeadingNode],
-		onError: (error: Error) => {
-			console.error(error)
-			throw error
-		},
-		theme: Theme,
-	}
+  const initialConfig = {
+    namespace: 'Editor',
+    nodes: [HeadingNode],
+    onError: (error: Error) => {
+      console.error(error)
+      throw error
+    },
+    theme: Theme,
+  }
 
-	return (
-		<LexicalComposer initialConfig={initialConfig}>
-			<div className="editor-container size-full">
-				<ToolbarPlugin />
+  return (
+    <LexicalComposer initialConfig={initialConfig}>
+      <div className="editor-container size-full">
+        <ToolbarPlugin />
 
-				<div className="editor-inner h-[1100px]">
-					<RichTextPlugin
-						contentEditable={<ContentEditable className="editor-input h-full" />}
-						placeholder={<Placeholder />}
-						ErrorBoundary={LexicalErrorBoundary}
-					/>
-					<HistoryPlugin />
-					<AutoFocusPlugin />
-				</div>
-			</div>
-		</LexicalComposer>
-	)
+        <div className="editor-inner h-[1100px]">
+          <RichTextPlugin
+            contentEditable={
+              <ContentEditable className="editor-input h-full" />
+            }
+            placeholder={<Placeholder />}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+          <HistoryPlugin />
+          <AutoFocusPlugin />
+        </div>
+      </div>
+    </LexicalComposer>
+  )
 }
