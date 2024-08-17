@@ -1,6 +1,5 @@
 import AddDocsBtn from '@/components/AddDocsBtn'
 import Header from '@/components/Header'
-import { Button } from '@/components/ui/button'
 import { SignedIn, UserButton } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
 import Image from 'next/image'
