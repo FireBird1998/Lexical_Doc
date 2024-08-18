@@ -10,7 +10,7 @@ export const getClerkUser = async ({
   userIds: string[]
 }) => {
   try {
-    const { data } = await clerkClient.users.getUserList({
+    const { data } = await clerkClient().users.getUserList({
       emailAddress: userIds,
     })
 
